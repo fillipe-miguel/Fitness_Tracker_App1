@@ -9,6 +9,8 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AlertDialog
+import br.com.example.fitnesstracker.model.Calc
+import kotlin.concurrent.thread
 import kotlin.math.pow
 
 class ImcActivity : AppCompatActivity() {
@@ -41,7 +43,21 @@ class ImcActivity : AppCompatActivity() {
 			AlertDialog.Builder(this).apply {
 				setTitle(getString(R.string.imc_response, result))
 				setMessage(imcResponseId)
-				setPositiveButton(android.R.string.ok) { a, b -> /* TODO */ }
+				setPositiveButton(android.R.string.ok) { _, _ -> /* TODO */ }
+				setNegativeButton(R.string.save) { _, _ ->
+					Thread {
+						val app = application as App
+						val dao = app.db.calcDao()
+
+						// Passando para o banco !
+						dao.insert(Calc(type = "imc", res = result))
+
+						runOnUiThread {
+							Toast.makeText(this@ImcActivity, R.string.saved, Toast.LENGTH_LONG)
+								.show()
+						}
+					}.start()
+				}
 				create()
 			}.show()
 
