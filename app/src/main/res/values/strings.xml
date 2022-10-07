@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Fitness Tracker</string>
+    <string name="label_imc">IMC</string>
+    <string name="label_tmb">TMB</string>
+    <string name="imc_icon_description">IMC icon</string>
+    <string name="imc_desc">Body mass index (BMI) is a measure of body fat based on height and weight that applies to adult men and women.\n\nFill in the weight and height fields to find out your BMI!</string>
+    <string name="edit_weight_hint">Weight ( Kg )</string>
+    <string name="edit_height_hint">Height ( cm )</string>
+    <string name="btn_send_text">Calculate</string>
+    <string name="fields_messages">"All the fields must be higher than 0! "</string>
+
+    <string name="imc_severely_low_weight">Severely thinness</string>
+    <string name="imc_very_low_weight">Moderate thinness</string>
+    <string name="imc_low_weight">Mild thinness</string>
+    <string name="normal">Normal weight</string>
+    <string name="imc_high_weight">Overweight</string>
+    <string name="imc_so_high_weight">Obese Class I</string>
+    <string name="imc_severely_high_weight">Obese Class II</string>
+    <string name="imc_extreme_weight">Obese Class III</string>
+    
+    <string name="imc_response">Your IMC is: %1$.2f</string>
+</resources>
