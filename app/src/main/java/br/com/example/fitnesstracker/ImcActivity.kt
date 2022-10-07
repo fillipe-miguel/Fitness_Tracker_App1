@@ -1,6 +1,7 @@
 package br.com.example.fitnesstracker
 
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.inputmethod.InputMethodManager
@@ -10,7 +11,6 @@ import android.widget.Toast
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AlertDialog
 import br.com.example.fitnesstracker.model.Calc
-import kotlin.concurrent.thread
 import kotlin.math.pow
 
 class ImcActivity : AppCompatActivity() {
@@ -53,8 +53,9 @@ class ImcActivity : AppCompatActivity() {
 						dao.insert(Calc(type = "imc", res = result))
 
 						runOnUiThread {
-							Toast.makeText(this@ImcActivity, R.string.saved, Toast.LENGTH_LONG)
-								.show()
+							val i = Intent(this@ImcActivity, ListCalcActivity::class.java)
+							i.putExtra("type", "imc")
+							startActivity(i)
 						}
 					}.start()
 				}

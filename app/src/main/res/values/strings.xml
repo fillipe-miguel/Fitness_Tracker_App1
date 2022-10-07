@@ -17,7 +17,7 @@
     <string name="imc_so_high_weight">Obese Class I</string>
     <string name="imc_severely_high_weight">Obese Class II</string>
     <string name="imc_extreme_weight">Obese Class III</string>
-    
+
     <string name="imc_response">Your IMC is: %1$.2f</string>
 
     <string name="saved">Saved !!</string>
