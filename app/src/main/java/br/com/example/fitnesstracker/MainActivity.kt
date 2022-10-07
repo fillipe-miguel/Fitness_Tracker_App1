@@ -4,6 +4,7 @@ package br.com.example.fitnesstracker
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -12,7 +13,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class MainActivity : AppCompatActivity(), OnItemClickListener {
+class MainActivity : AppCompatActivity() {
 
 	//	private lateinit var btnImc: LinearLayout
 	private lateinit var rvMain: RecyclerView
@@ -44,32 +45,28 @@ class MainActivity : AppCompatActivity(), OnItemClickListener {
 
 		rvMain = findViewById(R.id.rv_main)
 
-		rvMain.adapter = MainAdapter(listOfItems, this)
-
-		rvMain.layoutManager = GridLayoutManager(this, 2)
-
-
-//		btnImc = findViewById(R.id.btn_imc)
-
-//		btnImc.setOnClickListener{
-//			val i = Intent(this, ImcActivity::class.java)
-//			startActivity(i)
-//		}
-	}
-
-	override fun onClick(id: Int) {
-		when (id) {
-			1 -> {
-				val i = Intent(this, ImcActivity::class.java)
-				startActivity(i)
+		rvMain.adapter = MainAdapter(listOfItems){
+			when (it) {
+				1 -> {
+					Log.d("click", it.toString())
+					val i = Intent(this@MainActivity, ImcActivity::class.java)
+					startActivity(i)
+				}
+				2 -> {
+					// Posso abrir outra tela ou qualquer outra coisa!!
+					Log.d("click", it.toString())
+				}
 			}
 		}
 
+		rvMain.layoutManager = GridLayoutManager(this, 2)
+
 	}
+
 
 	private inner class MainAdapter(
 		private val listOfItems: MutableList<ItemOfMain>,
-		private val onItemClickListener: OnItemClickListener
+		private val onItemClickListener: (Int) -> Unit
 	) :
 		RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
 
@@ -109,7 +106,7 @@ class MainActivity : AppCompatActivity(), OnItemClickListener {
 				text.setText(itemCurrent.textStringId)
 
 				layout.setOnClickListener {
-					onItemClickListener.onClick(itemCurrent.id)
+					onItemClickListener.invoke(itemCurrent.id)
 				}
 
 			}
