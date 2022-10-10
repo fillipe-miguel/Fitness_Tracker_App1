@@ -43,6 +43,24 @@ class MainActivity : AppCompatActivity() {
 			)
 		)
 
+		listOfItems.add(
+			ItemOfMain(
+				id = 3,
+				drawableId = R.drawable.ic_reshot_icon_health,
+				textStringId = R.string.label_history_imc,
+				color = R.color.FFF0C48A
+			)
+		)
+
+		listOfItems.add(
+			ItemOfMain(
+				id = 4,
+				drawableId = R.drawable.ic_reshot_icon_health,
+				textStringId = R.string.label_history_tmb,
+				color = R.color.FFF0C48A
+			)
+		)
+
 		rvMain = findViewById(R.id.rv_main)
 
 		rvMain.adapter = MainAdapter(listOfItems){
@@ -54,6 +72,16 @@ class MainActivity : AppCompatActivity() {
 				}
 				2 -> {
 					val i = Intent(this@MainActivity, TmbActivity::class.java)
+					startActivity(i)
+				}
+				3 -> {
+					val i = Intent(this, ListCalcActivity::class.java)
+					i.putExtra("type", "imc")
+					startActivity(i)
+				}
+				4 -> {
+					val i = Intent(this, ListCalcActivity::class.java)
+					i.putExtra("type", "tmb")
 					startActivity(i)
 				}
 			}

@@ -1,7 +1,10 @@
 <resources>
     <string name="app_name">Fitness Tracker</string>
-    <string name="label_imc">IMC</string>
-    <string name="label_tmb">TMB</string>
+    <string name="label_imc">Add IMC</string>
+    <string name="label_tmb">Add TMB</string>
+    <string name="label_history_imc">History IMC</string>
+    <string name="label_history_tmb">History TMB</string>
+
     <string name="imc_icon_description">IMC icon</string>
     <string name="imc_desc">Body mass index (BMI) is a measure of body fat based on height and weight that applies to adult men and women.\n\nFill in the weight and height fields to find out your BMI!</string>
     <string name="edit_weight_hint">Weight ( Kg )</string>
