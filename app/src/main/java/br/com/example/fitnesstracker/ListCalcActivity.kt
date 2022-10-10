@@ -22,6 +22,7 @@ class ListCalcActivity : AppCompatActivity(), OnListClickListener {
 	private lateinit var adapter: MainAdapter
 	private lateinit var result: MutableList<Calc>
 	private lateinit var rvListCalc: RecyclerView
+	private lateinit var title: TextView
 
 	@SuppressLint("NotifyDataSetChanged")
 	override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,9 +37,17 @@ class ListCalcActivity : AppCompatActivity(), OnListClickListener {
 
 		rvListCalc = findViewById(R.id.rv_list_calc)
 
+		title = findViewById(R.id.list_title)
+
 
 		rvListCalc.layoutManager = LinearLayoutManager(this)
 		rvListCalc.adapter = adapter
+
+		when (type) {
+			"imc" -> title.text = getString(R.string.label_history_imc)
+			"tmb" -> title.text = getString(R.string.label_history_tmb)
+			else -> throw IllegalStateException("Type not found!")
+		}
 
 
 		Thread {
@@ -68,7 +77,7 @@ class ListCalcActivity : AppCompatActivity(), OnListClickListener {
 					// Passando para o banco !
 					val response = dao.deleteById(id = calc.id)
 
-					if(response > 0) {
+					if (response > 0) {
 						runOnUiThread {
 							result.removeAt(position)
 							adapter.notifyItemRemoved(position)
@@ -120,7 +129,7 @@ class ListCalcActivity : AppCompatActivity(), OnListClickListener {
 				tvDate.text = date
 				tvResult.text = getString(R.string.tmb_res, calcCurrent.res)
 
-				view.setOnLongClickListener{
+				view.setOnLongClickListener {
 					listener.onLongClick(adapterPosition, calcCurrent)
 					true
 				}
@@ -131,7 +140,7 @@ class ListCalcActivity : AppCompatActivity(), OnListClickListener {
 	}
 
 
-	}
+}
 
 
 
