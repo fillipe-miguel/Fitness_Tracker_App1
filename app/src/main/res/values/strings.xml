@@ -23,4 +23,5 @@
     <string name="saved">Saved !!</string>
     <string name="save">Save</string>
     <string name="imc_res">IMC: %1$.2f</string>
+    <string name="search">Search</string>
 </resources>
