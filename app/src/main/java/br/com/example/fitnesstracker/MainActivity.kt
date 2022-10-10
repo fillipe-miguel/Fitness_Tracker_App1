@@ -11,6 +11,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
@@ -30,7 +31,7 @@ class MainActivity : AppCompatActivity() {
 				id = 1,
 				drawableId = R.drawable.ic_reshot_icon_health,
 				textStringId = R.string.label_imc,
-				color = R.color.FFF0C48A
+				color = R.color.purple_500
 			)
 		)
 
@@ -39,7 +40,7 @@ class MainActivity : AppCompatActivity() {
 				id = 2,
 				drawableId = R.drawable.ic_reshot_icon_health,
 				textStringId = R.string.label_tmb,
-				color = R.color.FFF0C48A
+				color = R.color.purple_700
 			)
 		)
 
@@ -48,7 +49,7 @@ class MainActivity : AppCompatActivity() {
 				id = 3,
 				drawableId = R.drawable.ic_reshot_icon_health,
 				textStringId = R.string.label_history_imc,
-				color = R.color.FFF0C48A
+				color = R.color.purple_500
 			)
 		)
 
@@ -57,13 +58,13 @@ class MainActivity : AppCompatActivity() {
 				id = 4,
 				drawableId = R.drawable.ic_reshot_icon_health,
 				textStringId = R.string.label_history_tmb,
-				color = R.color.FFF0C48A
+				color = R.color.purple_700
 			)
 		)
 
 		rvMain = findViewById(R.id.rv_main)
 
-		rvMain.adapter = MainAdapter(listOfItems){
+		rvMain.adapter = MainAdapter(listOfItems) {
 			when (it) {
 				1 -> {
 					Log.d("click", it.toString())
@@ -87,7 +88,7 @@ class MainActivity : AppCompatActivity() {
 			}
 		}
 
-		rvMain.layoutManager = GridLayoutManager(this, 2)
+		rvMain.layoutManager = LinearLayoutManager(this)
 
 	}
 
