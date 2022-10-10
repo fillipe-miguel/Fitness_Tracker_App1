@@ -23,7 +23,7 @@
     <string name="saved">Saved !!</string>
     <string name="save">Save</string>
     <string name="imc_res">IMC: %1$.2f</string>
-    <string name="search">Search</string>
+    <string name="menu_item_list">History list</string>
 
     <string name="tmb_desc">"Basal metabolic rate (BMR) (sometimes referred to as resting metabolic rate) is the total number of calories your body needs to perform essential, life-sustaining functions. These basal functions include circulation, breathing, cell production, nutrient processing, protein synthesis, and ion transport. You can calculate the basal metabolic rate using a mathematical formula."</string>
     <string name="edit_age_hint">Age</string>
