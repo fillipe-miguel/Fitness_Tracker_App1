@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="tmb_lifestyle">
+
+        <item>@string/tmb_sedentary</item>
+        <item>@string/tmb_light_activity</item>
+        <item>@string/tmb_moderate_activity</item>
+        <item>@string/tmb_very_active</item>
+
+    </string-array>
+
+</resources>

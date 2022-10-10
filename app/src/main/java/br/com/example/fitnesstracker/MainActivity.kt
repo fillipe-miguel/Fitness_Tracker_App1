@@ -53,8 +53,8 @@ class MainActivity : AppCompatActivity() {
 					startActivity(i)
 				}
 				2 -> {
-					// Posso abrir outra tela ou qualquer outra coisa!!
-					Log.d("click", it.toString())
+					val i = Intent(this@MainActivity, TmbActivity::class.java)
+					startActivity(i)
 				}
 			}
 		}
