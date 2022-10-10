@@ -6,7 +6,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.com.example.fitnesstracker.model.Calc
@@ -15,7 +17,12 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 
-class ListCalcActivity : AppCompatActivity() {
+class ListCalcActivity : AppCompatActivity(), OnListClickListener {
+
+	private lateinit var adapter: MainAdapter
+	private lateinit var result: MutableList<Calc>
+	private lateinit var rvListCalc: RecyclerView
+
 	@SuppressLint("NotifyDataSetChanged")
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
@@ -24,11 +31,11 @@ class ListCalcActivity : AppCompatActivity() {
 		val type =
 			intent?.extras?.getString("type") ?: throw IllegalStateException("Type not found!")
 
-		val result = mutableListOf<Calc>()
+		result = mutableListOf<Calc>()
+		adapter = MainAdapter(result, this)
 
-		val rvListCalc: RecyclerView = findViewById(R.id.rv_list_calc)
+		rvListCalc = findViewById(R.id.rv_list_calc)
 
-		val adapter = MainAdapter(result)
 
 		rvListCalc.layoutManager = LinearLayoutManager(this)
 		rvListCalc.adapter = adapter
@@ -46,11 +53,39 @@ class ListCalcActivity : AppCompatActivity() {
 				adapter.notifyDataSetChanged()
 			}
 		}.start()
-
 	}
 
+	override fun onLongClick(position: Int, calc: Calc) {
+		AlertDialog.Builder(this).apply {
+			setTitle(R.string.delete)
+			setMessage(getString(R.string.delete_this))
+			setNegativeButton(android.R.string.cancel) { _, _ -> }
+			setPositiveButton(android.R.string.ok) { _, _ ->
+				Thread {
+					val app = application as App
+					val dao = app.db.calcDao()
+
+					// Passando para o banco !
+					val response = dao.deleteById(id = calc.id)
+
+					if(response > 0) {
+						runOnUiThread {
+							result.removeAt(position)
+							adapter.notifyItemRemoved(position)
+						}
+					}
+
+				}.start()
+			}
+			create()
+			show()
+		}
+	}
+
+
 	private inner class MainAdapter(
-		private val listOfCalcs: List<Calc>
+		private val listOfCalcs: List<Calc>,
+		private val listener: OnListClickListener
 	) : RecyclerView.Adapter<MainAdapter.MainViewHolder>() {
 
 		override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainViewHolder {
@@ -74,6 +109,8 @@ class ListCalcActivity : AppCompatActivity() {
 
 			fun bind(calcCurrent: Calc) {
 				// aqui mudar as coisas de forma dinamica!
+				val view = view as LinearLayout
+
 				tvDate = view.findViewById(R.id.tv_date)
 				tvResult = view.findViewById(R.id.tv_result)
 
@@ -81,11 +118,22 @@ class ListCalcActivity : AppCompatActivity() {
 				val date = sdt.format(calcCurrent.createDate)
 
 				tvDate.text = date
-				tvResult.text = getString(R.string.imc_res, calcCurrent.res)
+				tvResult.text = getString(R.string.tmb_res, calcCurrent.res)
+
+				view.setOnLongClickListener{
+					listener.onLongClick(adapterPosition, calcCurrent)
+					true
+				}
 
 			}
+
 		}
 	}
-}
+
+
+	}
+
+
+
 
 

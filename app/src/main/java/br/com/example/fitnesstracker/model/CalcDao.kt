@@ -11,6 +11,10 @@ interface CalcDao {
 	@Query("SELECT * FROM Calc WHERE type = :type")
 	fun getRegisterByType(type: String): List<Calc>
 
+
+	@Query("DELETE FROM Calc WHERE id = :id")
+	fun deleteById(id: Int): Int
+
 	/*
 	@Query
 	@Update
