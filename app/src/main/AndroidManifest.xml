@@ -14,13 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FitnessTracker"
         tools:targetApi="31">
-        <activity
-            android:name=".ListCalcActivity"
-            android:exported="false"
-            android:parentActivityName=".MainActivity" />
-        <activity
-            android:name=".ImcActivity"
-            android:exported="false" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -30,6 +24,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".ListCalcActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+
+        <activity
+            android:name=".TmbActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+
+        <activity
+            android:name=".ImcActivity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+
+
     </application>
 
 </manifest>
