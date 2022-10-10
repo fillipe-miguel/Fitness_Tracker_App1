@@ -127,7 +127,12 @@ class ListCalcActivity : AppCompatActivity(), OnListClickListener {
 				val date = sdt.format(calcCurrent.createDate)
 
 				tvDate.text = date
-				tvResult.text = getString(R.string.tmb_res, calcCurrent.res)
+				if(calcCurrent.type == "tmb"){
+					tvResult.text = getString(R.string.tmb_res, calcCurrent.res)
+				}else {
+					tvResult.text = getString(R.string.imc_res, calcCurrent.res)
+				}
+
 
 				view.setOnLongClickListener {
 					listener.onLongClick(adapterPosition, calcCurrent)

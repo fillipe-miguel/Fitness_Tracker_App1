@@ -35,8 +35,8 @@
     <string name="tmb_light_activity">Light Activity - 1 or 3 days per week</string>
     <string name="tmb_moderate_activity">Moderate Activity - 3 or 5 days per week</string>
     <string name="tmb_very_active">Very Active - Every day</string>
-    <string name="tmb_response">Your BMR is: %1$.2f</string>
-    <string name="tmb_res">BMR: %1$.2f</string>
+    <string name="tmb_response">Your BMR is: %1$.2f kcal / day</string>
+    <string name="tmb_res">BMR: %1$.2f kcal / day</string>
     <string name="delete_this">Delete this history??</string>
     <string name="delete">Delete</string>
 </resources>
