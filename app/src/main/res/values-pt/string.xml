@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Fitness Tracker</string>
+    <string name="label_imc">Add IMC</string>
+    <string name="label_tmb">Add TMB</string>
+    <string name="label_history_imc">Histórico IMC</string>
+    <string name="label_history_tmb">Histórico TMB</string>
+    <string name="imc_icon_description">BMI icon</string>
+    <string name="edit_height_hint">Altura ( cm )</string>
+    <string name="btn_send_text">Calcular</string>
+    <string name="fields_messages">Todos os campos devem ser maiores que 0!</string>
+    <string name="imc_severely_low_weight">Severamente magro</string>
+    <string name="imc_very_low_weight">Magreza moderada</string>
+    <string name="imc_low_weight">Magreza leve</string>
+    <string name="normal">Peso normal</string>
+    <string name="imc_high_weight">Acima do peso</string>
+    <string name="imc_so_high_weight">Obeso classe I</string>
+    <string name="imc_severely_high_weight">Obeso classe II</string>
+    <string name="imc_extreme_weight">Obeso classe III</string>
+    <string name="imc_response">Seu IMC é: %1$.2f</string>
+    <string name="saved">Salvo!</string>
+    <string name="save">Salvar</string>
+    <string name="imc_res">IMC: %1$.2f</string>
+    <string name="menu_item_list">Lista de histórico</string>
+    <string name="edit_age_hint">Idade</string>
+    <string name="tmb_sedentary">Sedentário</string>
+    <string name="tmb_light_activity">Levemente ativo - 1 ou 3 dias por semana</string>
+    <string name="tmb_moderate_activity">Moderadamente ativo - 3 ou 5 dias por semana</string>
+    <string name="tmb_very_active">Muito ativo - Todos os dias</string>
+    <string name="tmb_response">Sua TMB é: %1$.2f</string>
+    <string name="tmb_res">BMR: %1$.2f</string>
+    <string name="delete_this">Deletar esse histórico??</string>
+    <string name="delete">Deletar</string>
+    <string name="tmb_desc">A taxa metabólica basal (TMB) (às vezes chamada de taxa metabólica de repouso) é o número total de calorias que seu corpo precisa para realizar funções essenciais de sustentação da vida. Essas funções basais incluem circulação, respiração, produção de células, processamento de nutrientes, síntese de proteínas e transporte de íons. Você pode calcular a taxa metabólica basal usando uma fórmula matemática.</string>
+    <string name="imc_desc">O índice de massa corporal (IMC) é uma medida de gordura corporal com base na altura e peso que se aplica a homens e mulheres adultos. Preencha os campos de peso e altura para descobrir o seu IMC!</string>
+    <string name="edit_weight_hint">Peso ( Kg )</string>
+</resources>

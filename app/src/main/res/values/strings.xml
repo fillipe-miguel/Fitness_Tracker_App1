@@ -1,12 +1,12 @@
 <resources>
     <string name="app_name">Fitness Tracker</string>
-    <string name="label_imc">Add IMC</string>
-    <string name="label_tmb">Add TMB</string>
-    <string name="label_history_imc">History IMC</string>
-    <string name="label_history_tmb">History TMB</string>
+    <string name="label_imc">Add BMI</string>
+    <string name="label_tmb">Add BMR</string>
+    <string name="label_history_imc">History BMI</string>
+    <string name="label_history_tmb">History BMR</string>
 
-    <string name="imc_icon_description">IMC icon</string>
-    <string name="imc_desc">Body mass index (BMI) is a measure of body fat based on height and weight that applies to adult men and women.\n\nFill in the weight and height fields to find out your BMI!</string>
+    <string name="imc_icon_description">BMI icon</string>
+    <string name="imc_desc">Body mass index (BMI) is a measure of body fat based on height and weight that applies to adult men and women.  Fill in the weight and height fields to find out your BMI!</string>
     <string name="edit_weight_hint">Weight ( Kg )</string>
     <string name="edit_height_hint">Height ( cm )</string>
     <string name="btn_send_text">Calculate</string>
@@ -21,11 +21,11 @@
     <string name="imc_severely_high_weight">Obese Class II</string>
     <string name="imc_extreme_weight">Obese Class III</string>
 
-    <string name="imc_response">Your IMC is: %1$.2f</string>
+    <string name="imc_response">Your BMI is: %1$.2f</string>
 
     <string name="saved">Saved !!</string>
     <string name="save">Save</string>
-    <string name="imc_res">IMC: %1$.2f</string>
+    <string name="imc_res">BMI: %1$.2f</string>
     <string name="menu_item_list">History list</string>
 
     <string name="tmb_desc">"Basal metabolic rate (BMR) (sometimes referred to as resting metabolic rate) is the total number of calories your body needs to perform essential, life-sustaining functions. These basal functions include circulation, breathing, cell production, nutrient processing, protein synthesis, and ion transport. You can calculate the basal metabolic rate using a mathematical formula."</string>
@@ -35,8 +35,8 @@
     <string name="tmb_light_activity">Light Activity - 1 or 3 days per week</string>
     <string name="tmb_moderate_activity">Moderate Activity - 3 or 5 days per week</string>
     <string name="tmb_very_active">Very Active - Every day</string>
-    <string name="tmb_response">Your tmb is: %1$.2f</string>
-    <string name="tmb_res">TMB: %1$.2f</string>
-    <string name="delete_this">Delete this??</string>
+    <string name="tmb_response">Your BMR is: %1$.2f</string>
+    <string name="tmb_res">BMR: %1$.2f</string>
+    <string name="delete_this">Delete this history??</string>
     <string name="delete">Delete</string>
 </resources>
